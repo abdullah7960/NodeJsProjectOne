@@ -1,12 +1,19 @@
 REST API - JSON
 
-GET /users - List all users
-GET /users/1 - Get the user with ID 1
-GET /users/2 - Get the user with ID 2
+GET /users - HTML Document Render
+GET /api/users - List all users JSONS - Done
 
 
-POST /users - Create new user
+GET /api/users/1 - Get the user with ID 1
+GET /api/users/2 - Get the user with ID 2
 
-PATCH /users/1 - Edit the user with ID 1
+Dynamic Path Parameters
+GET /api/users/:ID
+id => this is variable
 
-DELETE /users/1 - Delete the user with ID 1
+
+POST /api/users - Create new user
+
+PATCH /api/users/1 - Edit the user with ID 1
+
+DELETE /api/users/1 - Delete the user with ID 1
