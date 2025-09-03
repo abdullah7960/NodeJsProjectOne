@@ -25,10 +25,10 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/api/users/:id', (req, res) => {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const user = users.find(user => user.id === id)
+    return res.json(user);
 
-    res.json()
 })
 
 app.listen(PORT, () => console.log('Server Started'));
