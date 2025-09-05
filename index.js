@@ -12,12 +12,15 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
     console.log("Hello from middleware 1");
-    next();
+    req.myUserName = "Abdulah.dev";
+    fs.appendFile('log.txt', `${Date.now()} : ${req.method} : ${req.path}`, (err, data) => {
+        next();
+    });
 });
 
 
 app.use((req, res, next) => {
-    console.log("Hello from middleware 2");
+    console.log("Hello from middleware 2", req.myUserName);
     return res.end("hey");
 });
 
